@@ -5,13 +5,13 @@ function getComputerChoice(){
 
     //Conditional statement assigning rock, paper, and scissors to 3 outputs to randomNumber
     if (randomNumber < 1){
-        console.log("it's rock")
+        x= "it's rock"
     } else if (randomNumber < 2){
-        console.log("it's paper")
+        x= "it's paper"
     } else {
-        console.log("it's scissors")
+        x= "it's scissors"
     }
-    
-
+    return x
 }
-getComputerChoice()
+
+console.log(getComputerChoice())
