@@ -24,7 +24,13 @@ function getHumanChoice() {
     let userInput = prompt("Rock, paper, or scissors?", "");
     return userInput
     
-
 }
 
 console.log(getHumanChoice())
+
+//Create variables that store human and computer scores
+
+humanScore=0;
+computerScore=0;
+
+console.log(humanScore,computerScore);
