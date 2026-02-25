@@ -5,7 +5,7 @@ function getComputerChoice(){
 
     //Conditional statement assigning rock, paper, and scissors to 3 outputs to randomNumber
     if (randomNumber < 1){
-        x= "it's rock"
+        let x= "it's rock"
     } else if (randomNumber < 2){
         x= "it's paper"
     } else {
