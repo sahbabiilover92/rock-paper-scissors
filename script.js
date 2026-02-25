@@ -23,7 +23,8 @@ function getHumanChoice() {
    //input prompt
     let userInput = prompt("Rock, paper, or scissors?", "");
     return userInput
+    
 
 }
 
-getHumanChoice()
+console.log(getHumanChoice())
