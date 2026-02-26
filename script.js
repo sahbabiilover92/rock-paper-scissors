@@ -76,8 +76,7 @@ function playGame(){
                 console.log("It's a tie. Try again.");
                 break;
             case (humanCase=="scissors" && computerChoice=="scissors"):
-                console.log("It's a tneRound();ie. Try again.");humanScore=0;
-                computerScore=0;
+                console.log("It's a tie. Try again.");
                 break;
             case (humanCase=="scissors" && computerChoice=="paper"):
                 console.log("You win! Scissors beats Paper!");
@@ -105,7 +104,7 @@ function playGame(){
 }
             
         //initiate playRound function
-        playRound(getHumanChoice(), getComputerChoice())   
+            playRound(getHumanChoice(), getComputerChoice())   
         
 }
 
