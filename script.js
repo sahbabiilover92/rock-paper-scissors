@@ -40,12 +40,44 @@ Function compares the two values presented by computer and user so that rock pap
 After comparison, the console returns a statement with that rounds winner
 Each round win contributes to the winners score (ie if computer wins computer score goes up 1)*/
 
-userChoice = getHumanChoice();
+
 
 function playRound(humanChoice, computerChoice){
     let humanCase= humanChoice.toLowerCase();
-    return humanCase
+
+    switch (true){
+        case (humanChoice=="rock" && computerChoice=="scissors"):
+            console.log('You win! Rock beats Scissors!');
+            break;
+        case (humanChoice=="rock" && computerChoice=="paper"):
+            console.log("You lose! Paper beats Rock.");
+            break;
+        case (humanChoice=="rock" && computerChoice=="rock"):
+            console.log("It's a tie. Try again.");
+            break;
+        case (humanChoice=="paper" && computerChoice=="scissors"):
+            console.log("You lose! Scissors beats Paper");
+            break;
+        case (humanChoice=="paper" && computerChoice=="rock"):
+            console.log("You win! Paper beats Rock!");
+            break;
+        case (humanChoice=="paper" && computerChoice=="paper"):
+            comsole.log("It's a tie. Try again.");
+            break;
+        case (humanChoice=="scissors" && computerChoice=="scissors"):
+            comsole.log("It's a tie. Try again.");
+            break;
+        case (humanChoice=="scissors" && computerChoice=="paper"):
+            console.log("You win! Scissors beats Paper!");
+            break;
+        case (humanChoice=="scissors" && computerChoice=="rock"):
+            console.log("You lose! Rock beats Scissors.");
+            break;
+    }
 
 }
 
-console.log(playRound(userChoice))
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
