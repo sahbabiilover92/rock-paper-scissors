@@ -48,18 +48,22 @@ function playRound(humanChoice, computerChoice){
     switch (true){
         case (humanChoice=="rock" && computerChoice=="scissors"):
             console.log('You win! Rock beats Scissors!');
+            humanScore += 1;
             break;
         case (humanChoice=="rock" && computerChoice=="paper"):
             console.log("You lose! Paper beats Rock.");
+            computerScore += 1;
             break;
         case (humanChoice=="rock" && computerChoice=="rock"):
             console.log("It's a tie. Try again.");
             break;
         case (humanChoice=="paper" && computerChoice=="scissors"):
             console.log("You lose! Scissors beats Paper");
+            computerScore += 1;
             break;
         case (humanChoice=="paper" && computerChoice=="rock"):
             console.log("You win! Paper beats Rock!");
+            humanScore +=1;
             break;
         case (humanChoice=="paper" && computerChoice=="paper"):
             comsole.log("It's a tie. Try again.");
@@ -69,9 +73,11 @@ function playRound(humanChoice, computerChoice){
             break;
         case (humanChoice=="scissors" && computerChoice=="paper"):
             console.log("You win! Scissors beats Paper!");
+            humanScore +=1;
             break;
         case (humanChoice=="scissors" && computerChoice=="rock"):
             console.log("You lose! Rock beats Scissors.");
+            computerScore += 1;
             break;
     }
 
