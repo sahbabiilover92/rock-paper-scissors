@@ -16,8 +16,6 @@ function getComputerChoice(){
     return x
 }
 
-console.log(getComputerChoice())
-
 //Function that takes human input of rock paper or scissors. Stores input
 function getHumanChoice() {
    //input prompt
@@ -32,7 +30,6 @@ function getHumanChoice() {
 humanScore=0;
 computerScore=0;
 
-console.log(humanScore,computerScore);
 
 /* Function that takes two arguments, one from the user and one from the computer. 
 It should convert the user string into one of the 3 strings stored in the computer responses (ie Rock becomes rock)
@@ -46,44 +43,63 @@ function playRound(humanChoice, computerChoice){
     let humanCase= humanChoice.toLowerCase();
 
     switch (true){
-        case (humanChoice=="rock" && computerChoice=="scissors"):
+        case (humanCase=="rock" && computerChoice=="scissors"):
             console.log('You win! Rock beats Scissors!');
             humanScore += 1;
             break;
-        case (humanChoice=="rock" && computerChoice=="paper"):
+        case (humanCase=="rock" && computerChoice=="paper"):
             console.log("You lose! Paper beats Rock.");
             computerScore += 1;
             break;
-        case (humanChoice=="rock" && computerChoice=="rock"):
+        case (humanCase=="rock" && computerChoice=="rock"):
             console.log("It's a tie. Try again.");
             break;
-        case (humanChoice=="paper" && computerChoice=="scissors"):
+        case (humanCase=="paper" && computerChoice=="scissors"):
             console.log("You lose! Scissors beats Paper");
             computerScore += 1;
             break;
-        case (humanChoice=="paper" && computerChoice=="rock"):
+        case (humanCase=="paper" && computerChoice=="rock"):
             console.log("You win! Paper beats Rock!");
             humanScore +=1;
             break;
-        case (humanChoice=="paper" && computerChoice=="paper"):
+        case (humanCase=="paper" && computerChoice=="paper"):
+            console.log("It's a tie. Try again.");
+            break;
+        case (humanCase=="scissors" && computerChoice=="scissors"):
             comsole.log("It's a tie. Try again.");
             break;
-        case (humanChoice=="scissors" && computerChoice=="scissors"):
-            comsole.log("It's a tie. Try again.");
-            break;
-        case (humanChoice=="scissors" && computerChoice=="paper"):
+        case (humanCase=="scissors" && computerChoice=="paper"):
             console.log("You win! Scissors beats Paper!");
             humanScore +=1;
             break;
-        case (humanChoice=="scissors" && computerChoice=="rock"):
+        case (humanCase=="scissors" && computerChoice=="rock"):
             console.log("You lose! Rock beats Scissors.");
             computerScore += 1;
             break;
     }
+
 
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+//Function that plays 5 rounds, displays score, and declares winner at end of game
+
+function playGame(){
+    playRound(humanSelection, computerSelection);
+
+    console.log("YOU:",humanScore,"COM:",computerScore)
+   
+    if (humanScore>=3){
+        console.log("Winner winner chicken dinner!")
+    } else if (computerScore>=3){
+        console.log("The computer won. Better luck next time.")
+    } else {
+        console.log('Next round?')
+    }
+    playRound(humanSelection, computerSelection);
+
+}
+
+playGame();
